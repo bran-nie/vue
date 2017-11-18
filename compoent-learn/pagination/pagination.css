@@ -1,0 +1,86 @@
+ .page-pagination {
+  text-align: center;
+}
+
+.page-pagination ul.page-nav {
+  display: inline-block;
+  list-style: none;
+  padding-left: 0;
+  text-align: center;
+}
+
+.page-pagination ul.page-nav li {
+  line-height: 24px;
+  height: 24px;
+  text-align: center;
+  background-color: #383838;
+  color: #a3a3a3;
+  font-size: 14px;
+  display: inline-block;
+  margin-right: 24px;
+  padding: 0 9px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.page-pagination ul.page-nav li:last-child {
+  margin-right: 0;
+}
+
+.page-pagination ul.page-nav li.active {
+  -webkit-transition: all .4s;
+  transition: all .4s;
+  color: #fff;
+  background-color: #c83939;
+}
+
+.page-pagination ul.page-nav li.page-jump {
+  cursor: default;
+  margin-right: 12px;
+}
+
+.page-pagination ul.page-nav li.page-jump input {
+  width: 32px;
+  height: 100%;
+  border: none;
+  border-radius: 40%;
+  outline: none;
+  text-align: center;
+}
+
+.page-pagination ul.page-nav br.mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .page-pagination ul.page-nav {
+    text-align: left;
+  }
+
+  .page-pagination ul.page-nav li {
+    margin-right: 0;
+  }
+
+  .page-pagination ul.page-nav br.mobile {
+    display: block;
+  }
+}
+
+.ele-unselected {
+  -moz-user-select: none;
+  /*火狐*/
+  -webkit-user-select: none;
+  /*webkit浏览器*/
+  -ms-user-select: none;
+  /*IE10*/
+  /*早期浏览器*/
+  user-select: none;
+}
+
+.ele-selected {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
