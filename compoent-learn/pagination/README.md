@@ -15,9 +15,9 @@ data: {
           //options
           page_current: 1,    // 页面初始化的时候，展示的页数。   默认为1， 类型Number
           page_current: 1,    // 页面初始化的时候，展示的页数。   默认为1， 类型Number
-          page_group_xs_mode: true,  // 控制分页可见页码的模式  xs则展示较少页码，一般用作移动端   为空和默认 是false，类型Boolean
-          page_num_show: true,  // 为true时，在下一页后面显示总页数  为空和默认 是false  类型Boolean
-          page_jump: true,     //  为true时，开启跳转页数功能  为空和默认 是false 类型Boolean
+          page_group_xs_mode: true,  // 控制分页可见页码的模式  xs则展示较少页码，一般用作移动端   默认 是false，类型Boolean
+          page_num_show: true,  // 为true时，在下一页后面显示总页数  默认 是false  类型Boolean
+          page_jump: true,     //  为true时，开启跳转页数功能  默认 是false 类型Boolean
          
       },
 }
@@ -61,7 +61,9 @@ Vue.js
         methods: {
             showPage: function (val) {
                 this.start = (val-1) * this.pageInfo.page_one_page_num;
-                this.pageInfo.page_group_mode = 2;
+                // 可以 在需要的时候，切换分页显示的 模式。  比如手机上以  xs_group 模式。
+                //this.pageInfo.page_group_xs_mode = true;
+                
 
                 this.getData(this.start, this.pageInfo.page_one_page_num);
             },
