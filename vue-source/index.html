@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue score</title>
+</head>
+<body>
+<div id="app">
+    <!--插值绑定-->
+    <p>{{name}}</p>
+    <!--指令解析-->
+    <p m-text="name"></p>
+    <p>{{age}}</p>
+    <p>{{doubleAge}}</p>
+    <!--双向绑定-->
+    <input type="text" m-model="name">
+    <!--事件处理-->
+    <button @click="changeName">hello</button>
+    <!--HTML内容处理-->
+    <div m-html="html"></div>
+</div>
+
+<script src="./compile.js"></script>
+<script src="./MyVue.js"></script>
+<script>
+    const app = new MyVue({
+        el: '#app',
+        data: {
+            name: 'I am test',
+            age: 12,
+            doubleAge: 2,
+            html: '<button>这是一个按钮</button>'
+        },
+        created() {
+            console.log('开始啦')
+            setTimeout(() => {
+                this.name = '我是测试'
+            }, 1500)
+        },
+        methods: {
+            changeName() {
+                this.name = 'hey， click 改变了 name'
+                this.age = 18
+            }
+        }
+    })
+</script>
+<script type="module" src="module.js"></script>
+</body>
+</html>
